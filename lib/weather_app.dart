@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_31/single_weather.dart';
+import 'package:flutter_application_31/weather_locations.dart';
 
-class WeatherApp extends StatefulWidget {
-  const WeatherApp({super.key});
+class WeatherApp extends StatelessWidget {
+  WeatherApp({super.key});
 
-  @override
-  State<WeatherApp> createState() => _WeatherAppState();
-}
-
-class _WeatherAppState extends State<WeatherApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +46,6 @@ class _WeatherAppState extends State<WeatherApp> {
               height: double.infinity,
               width: double.infinity,
             ),
-            SingleWeather(),
             Container(
               decoration: BoxDecoration(color: Colors.black12),
             ),
@@ -100,9 +95,11 @@ class _WeatherAppState extends State<WeatherApp> {
                 ],
               ),
             ),
-            PageView.builder(itemBuilder: (ctx, i) {
-              SingleWeather();
-            })
+            PageView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: locationList.length,
+              itemBuilder: (context, index) => SingleWeather(index),
+            )
           ],
         ),
       ),

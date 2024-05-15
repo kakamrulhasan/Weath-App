@@ -12,7 +12,7 @@ class WeatherLocations {
       required this.wind});
 }
 
-final location = [
+final locationList = [
   WeatherLocations(
       city: 'Comilla',
       dateTime: '07:50 PM - Monday, 9 Nov 2024',

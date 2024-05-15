@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_31/weather_locations.dart';
 
-class SingleWeather extends StatefulWidget {
-  const SingleWeather({super.key});
+class SingleWeather extends StatelessWidget {
+  final int index;
+  SingleWeather(this.index);
 
-  @override
-  State<SingleWeather> createState() => _SingleWeatherState();
-}
-
-class _SingleWeatherState extends State<SingleWeather> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +24,7 @@ class _SingleWeatherState extends State<SingleWeather> {
                     SizedBox(
                       height: 150,
                     ),
-                    Text('Comilla',
+                    Text(locationList[index].city,
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 36,
@@ -37,7 +34,7 @@ class _SingleWeatherState extends State<SingleWeather> {
                       height: 5,
                     ),
                     Text(
-                      '07:50 PM - Monday, 9 Nov 2020',
+                      locationList[index].dateTime,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14,
