@@ -53,20 +53,67 @@ class _WeatherAppState extends State<WeatherApp> {
               padding: EdgeInsets.all(20),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 120,
+                  Column(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 120, ),
+                          Text(
+                            'Comilla',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold,
+                            
+                          ),
+                          
+                          ),
+                          Text('hello',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                          ),)
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 120, ),
+                          Text(
+                            'Comilla',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold,
+                            
+                          ),
+                          
+                          ),
+                          Text('hello',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                          ),)
+                        ],
+                      ),
+                    ],
                   ),
-                  Text('Comilla',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold
-                  ),
-                  
-                  ),
+                  Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.white
+                          )
+                        ),
+                      )
+                    ],
+                  )
                 ],
               ),
-            )
+            ),
+            Container(decoration: BoxDecoration(color:  Colors.black12),)
           ],
         ),
       ),
