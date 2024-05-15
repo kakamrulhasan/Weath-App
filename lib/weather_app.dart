@@ -52,52 +52,62 @@ class _WeatherAppState extends State<WeatherApp> {
             Container(
               padding: EdgeInsets.all(20),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(height: 120, ),
-                          Text(
-                            'Comilla',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SizedBox(height: 150, ),
+                            Text(
+                              'Comilla',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 36,
+                              fontWeight: FontWeight.bold,
+                              
+                            ) ),
+                            SizedBox(height: 5,),
+                            Text('07:50 PM - Monday, 9 Nov 2020',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),)
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              '24\u2103',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 85,
+                              fontWeight: FontWeight.w300,
+                              
+                            ), ),
+                            Row(
+                              children: [
+                                Icon(Icons.mode_night_outlined,color: Colors.white,size: 34,),
+                                SizedBox(width: 10,),
+                            Text('Night',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                            ),),
+                              ],
+                            ),
                             
-                          ),
-                          
-                          ),
-                          Text('hello',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                          ),)
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(height: 120, ),
-                          Text(
-                            'Comilla',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                            
-                          ),
-                          
-                          ),
-                          Text('hello',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                          ),)
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                   Column(
                     children: [
@@ -107,6 +117,25 @@ class _WeatherAppState extends State<WeatherApp> {
                             color: Colors.white
                           )
                         ),
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Comilla',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold,
+                            
+                          ),
+                          
+                          ),
+                          Text('hello',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 22,
+                          ),)
+                        ],
                       )
                     ],
                   )
