@@ -51,7 +51,58 @@ class _WeatherAppState extends State<WeatherApp> {
               width: double.infinity,
             ),
             SingleWeather(),
-            Container(decoration: BoxDecoration(color:  Colors.black12),)
+            Container(
+              decoration: BoxDecoration(color: Colors.black12),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 140, left: 15),
+              child: Row(
+                children: [
+                  Container(
+                    width: 12,
+                    height: 5,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(5)),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    width: 5,
+                    height: 5,
+                    decoration: BoxDecoration(
+                        color: Colors.white54,
+                        borderRadius: BorderRadius.circular(5)),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    width: 5,
+                    height: 5,
+                    decoration: BoxDecoration(
+                        color: Colors.white54,
+                        borderRadius: BorderRadius.circular(5)),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    width: 5,
+                    height: 5,
+                    decoration: BoxDecoration(
+                        color: Colors.white54,
+                        borderRadius: BorderRadius.circular(5)),
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    width: 5,
+                    height: 5,
+                    decoration: BoxDecoration(
+                        color: Colors.white54,
+                        borderRadius: BorderRadius.circular(5)),
+                  ),
+                ],
+              ),
+            ),
+            PageView.builder(itemBuilder: (ctx, i) {
+              SingleWeather();
+            })
           ],
         ),
       ),
