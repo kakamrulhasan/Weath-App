@@ -1,12 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_31/single_weather.dart';
+import 'package:flutter_application_31/slider_dot.dart';
 import 'package:flutter_application_31/weather_locations.dart';
 
-class WeatherApp extends StatelessWidget {
+class WeatherApp extends StatefulWidget {
   WeatherApp({super.key});
 
   @override
+  State<WeatherApp> createState() => _WeatherAppState();
+}
+
+class _WeatherAppState extends State<WeatherApp> {
+  int _currentPage = 0;
+
+  _onPageChanged(int index) {
+    setState(() {
+      _currentPage = index;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    String bgImg;
+    if (locationList[_currentPage].weatherType == 'Night') {
+      bgImg = 'assets/night.jpg';
+    } else {
+      bgImg = 'assets/galaxy.jpeg';
+    }
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -41,7 +61,7 @@ class WeatherApp extends StatelessWidget {
         child: Stack(
           children: [
             Image.asset(
-              'assets/galaxy.jpeg',
+              bgImg,
               fit: BoxFit.cover,
               height: double.infinity,
               width: double.infinity,
@@ -53,45 +73,8 @@ class WeatherApp extends StatelessWidget {
               margin: EdgeInsets.only(top: 140, left: 15),
               child: Row(
                 children: [
-                  Container(
-                    width: 12,
-                    height: 5,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(5)),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5),
-                    width: 5,
-                    height: 5,
-                    decoration: BoxDecoration(
-                        color: Colors.white54,
-                        borderRadius: BorderRadius.circular(5)),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5),
-                    width: 5,
-                    height: 5,
-                    decoration: BoxDecoration(
-                        color: Colors.white54,
-                        borderRadius: BorderRadius.circular(5)),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5),
-                    width: 5,
-                    height: 5,
-                    decoration: BoxDecoration(
-                        color: Colors.white54,
-                        borderRadius: BorderRadius.circular(5)),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5),
-                    width: 5,
-                    height: 5,
-                    decoration: BoxDecoration(
-                        color: Colors.white54,
-                        borderRadius: BorderRadius.circular(5)),
-                  ),
+                  for (int i = 0; i < locationList.length; i++)
+                    if (i == _currentPage) SliderDot(true) else SliderDot(false)
                 ],
               ),
             ),
@@ -99,7 +82,8 @@ class WeatherApp extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: locationList.length,
               itemBuilder: (context, index) => SingleWeather(index),
-            )
+              onPageChanged: _onPageChanged,
+            ),
           ],
         ),
       ),

@@ -6,11 +6,14 @@ class SliderDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 12,
+    return AnimatedContainer(
+      duration: Duration(milliseconds: 150),
+      margin: EdgeInsets.symmetric(horizontal: 5),
+      width: isActive ? 12 : 5,
       height: 5,
       decoration: BoxDecoration(
-          color: Colors.white, borderRadius: BorderRadius.circular(5)),
+          color: isActive ? Colors.white : Colors.white38,
+          borderRadius: BorderRadius.circular(5)),
     );
   }
 }
