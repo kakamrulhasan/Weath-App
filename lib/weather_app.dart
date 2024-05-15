@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_31/single_weather.dart';
 
 class WeatherApp extends StatefulWidget {
   const WeatherApp({super.key});
@@ -49,99 +50,7 @@ class _WeatherAppState extends State<WeatherApp> {
               height: double.infinity,
               width: double.infinity,
             ),
-            Container(
-              padding: EdgeInsets.all(20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            SizedBox(height: 150, ),
-                            Text(
-                              'Comilla',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 36,
-                              fontWeight: FontWeight.bold,
-                              
-                            ) ),
-                            SizedBox(height: 5,),
-                            Text('07:50 PM - Monday, 9 Nov 2020',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                            ),)
-                          ],
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              '24\u2103',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 85,
-                              fontWeight: FontWeight.w300,
-                              
-                            ), ),
-                            Row(
-                              children: [
-                                Icon(Icons.mode_night_outlined,color: Colors.white,size: 34,),
-                                SizedBox(width: 10,),
-                            Text('Night',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 22,
-                            ),),
-                              ],
-                            ),
-                            
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Column(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.white
-                          )
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            'Comilla',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                            
-                          ),
-                          
-                          ),
-                          Text('hello',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                          ),)
-                        ],
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
+            SingleWeather(),
             Container(decoration: BoxDecoration(color:  Colors.black12),)
           ],
         ),
