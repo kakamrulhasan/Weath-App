@@ -47,7 +47,7 @@ class SingleWeather extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '24\u2103',
+                      locationList[index].temparature,
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 85,
@@ -65,7 +65,7 @@ class SingleWeather extends StatelessWidget {
                           width: 10,
                         ),
                         Text(
-                          'Night',
+                          locationList[index].weatherType,
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 22,
@@ -93,7 +93,7 @@ class SingleWeather extends StatelessWidget {
                     Column(
                       children: [
                         Text(
-                          'Wind',
+                          'wind',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 14,
@@ -101,7 +101,7 @@ class SingleWeather extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '10',
+                          locationList[index].wind.toString(),
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -142,7 +142,7 @@ class SingleWeather extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '10',
+                          locationList[index].rain.toString(),
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -183,7 +183,7 @@ class SingleWeather extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          '10',
+                          locationList[index].humidity.toString(),
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,

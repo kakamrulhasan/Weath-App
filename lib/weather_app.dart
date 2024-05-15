@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_application_31/single_weather.dart';
 import 'package:flutter_application_31/slider_dot.dart';
 import 'package:flutter_application_31/weather_locations.dart';
@@ -22,8 +23,12 @@ class _WeatherAppState extends State<WeatherApp> {
   @override
   Widget build(BuildContext context) {
     String bgImg;
-    if (locationList[_currentPage].weatherType == 'Night') {
-      bgImg = 'assets/night.jpg';
+    if (locationList[_currentPage].weatherType == 'sunny') {
+      bgImg = 'assets/sunny.jpg';
+    } else if (locationList[_currentPage].weatherType == 'Haze') {
+      bgImg = 'assets/winter.jpg';
+    } else if (locationList[_currentPage].weatherType == 'rain') {
+      bgImg = 'assets/rains.jpg';
     } else {
       bgImg = 'assets/galaxy.jpeg';
     }
